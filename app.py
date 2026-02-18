@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 os.environ["OMP_NUM_THREADS"] = "1"
-df = pd.read_csv('CustomerMarketing.csv')
+df = pd.read_csv('"C:\Users\LENOVO\Downloads\clustering\marketing_campaign1 (1).xlsx"')
 df.info()
 df.head(5)
 df.isnull().sum()
@@ -393,5 +393,6 @@ if uploaded_file is not None:
     plt.title("Customer Segments (PCA View)")
 
     st.pyplot(plt)
+
 
 
