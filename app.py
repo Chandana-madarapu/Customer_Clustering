@@ -15,20 +15,17 @@ st.title("Customer Segmentation using K-Means Clustering")
 # ==========================================
 # FILE UPLOAD
 # ==========================================
-uploaded_file = st.file_uploader("Upload dataset", type=["xlsx","csv"])
+import pandas as pd
+import streamlit as st
 
-if uploaded_file is not None:
+st.title("Customer Segmentation using K-Means Clustering")
 
-    # ==========================================
-    # LOAD DATA
-    # ==========================================
-    if uploaded_file.name.endswith(".xlsx"):
-        df = pd.read_excel(uploaded_file)
-    else:
-        df = pd.read_csv(uploaded_file)
+# load dataset from project folder
+df = pd.read_excel("marketing_campaign1.xlsx")
 
-    st.subheader("Dataset Preview")
-    st.write(df.head())
+st.subheader("Dataset Preview")
+st.write(df.head())
+
 
     # ==========================================
     # HANDLE MISSING INCOME
@@ -168,3 +165,4 @@ if uploaded_file is not None:
 
 else:
     st.info("Upload dataset to begin")
+
