@@ -278,15 +278,12 @@ plt.xlabel("Principal Component 1")
 plt.ylabel("Principal Component 2")
 plt.legend(title="Cluster")
 plt.show()
-st.subheader("Cluster Interpretation")
 
-st.write("Cluster 1 - Low spending customers")
-st.write("Cluster 2 - Moderate customers")
 st.write("Cluster 3 - Premium high-value customers")
 
 
 Profile
-Highest Income (76K)
+st.write("Highest Income (76K)")
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -396,4 +393,5 @@ if uploaded_file is not None:
     plt.title("Customer Segments (PCA View)")
 
     st.pyplot(plt)
+
 
