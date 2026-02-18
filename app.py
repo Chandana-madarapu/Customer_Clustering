@@ -5,7 +5,20 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 os.environ["OMP_NUM_THREADS"] = "1"
-df = pd.read_csv("marketing_campaign1.xlsx")
+import streamlit as st
+import pandas as pd
+
+uploaded_file = st.file_uploader("Upload dataset", type=["xlsx","csv"])
+
+if uploaded_file is not None:
+    if uploaded_file.name.endswith(".xlsx"):
+        df = pd.read_excel(uploaded_file)
+    else:
+        df = pd.read_csv(uploaded_file)
+
+    st.write("Dataset preview")
+    st.write(df.head())
+
 df.info()
 df.head(5)
 df.isnull().sum()
@@ -393,6 +406,7 @@ if uploaded_file is not None:
     plt.title("Customer Segments (PCA View)")
 
     st.pyplot(plt)
+
 
 
 
